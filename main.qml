@@ -2,7 +2,8 @@ import QtQuick 2.3
 import QtQuick.Window 2.2
 import QtQuick.Controls 1.2
 import Qt.WebSockets 1.0
-import Qt.labs.controls 1.0
+import QtMultimedia 5.8
+
 
 Window {
     visible: true
@@ -11,10 +12,34 @@ Window {
     id:main
 
 
+
+    Item {
+        anchors.fill: parent
+        MediaPlayer {
+            id: mediaplayer
+            source:"file:///data/video.mp4"
+        }
+
+        VideoOutput {
+            anchors.fill: parent
+            source: mediaplayer
+        }
+    }
+
     Rectangle
     {
-        color:"lightgreen"
-        anchors.fill: parent
+        width:50
+        height:50
+        anchors.centerIn: parent
+        color:"red"
+        MouseArea {
+            id: playArea
+            anchors.fill: parent
+            onClicked:{
+                mediaplayer.play();
+            }
+        }
     }
+
 
 }
