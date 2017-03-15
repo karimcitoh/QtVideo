@@ -13,17 +13,18 @@ Window {
 
 
 
-    Item {
+    Video {
         anchors.fill: parent
-        MediaPlayer {
+//        MediaPlayer {
+
             id: mediaplayer
             source:"file:///data/video.mp4"
-        }
+//        }
 
-        VideoOutput {
-            anchors.fill: parent
-            source: mediaplayer
-        }
+//        VideoOutput {
+//            anchors.fill: parent
+//            source: mediaplayer
+//        }
     }
 
     Rectangle
