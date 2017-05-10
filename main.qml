@@ -2,7 +2,6 @@ import QtQuick 2.3
 import QtQuick.Window 2.2
 import QtQuick.Controls 1.2
 import Qt.WebSockets 1.0
-import QtMultimedia 5.8
 
 
 Window {
@@ -11,21 +10,6 @@ Window {
     height: 272
     id:main
 
-
-
-    Video {
-        anchors.fill: parent
-//        MediaPlayer {
-
-            id: mediaplayer
-            source:"file:///data/video.mp4"
-//        }
-
-//        VideoOutput {
-//            anchors.fill: parent
-//            source: mediaplayer
-//        }
-    }
 
     Rectangle
     {
@@ -37,7 +21,7 @@ Window {
             id: playArea
             anchors.fill: parent
             onClicked:{
-                mediaplayer.play();
+                console.log("Hello")
             }
         }
     }
